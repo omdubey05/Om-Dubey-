@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+      *{
+         padding: 0;
+         margin: 0;
+         font-family: 'poppins', sans-serif;
+      }
+      body{
+         background-color: #40a6fa;
+         background-image: linear-gradient(to right,rgba(255,0,0,0),
+         rgb(215, 18, 18));
+         display: grid;
+         height: 100vh;
+         place-items: center;
+      }
+      
+      .main{
+         width: 400px;
+         height: 500px;
+         background-color: rgb(193, 241, 247);
+         position:relative;
+         box-shadow:10px 10px 6px rgb(69, 131, 152) ;
+         border-radius: 16px; 
+      }
+      
+      .main input[type='text'] {
+         width: 88%;
+         position: relative;
+         height: 80px;
+         top: 25px;
+         text-align: right;
+         padding: 3px 6px;
+         outline: none;
+         font-size: 40px;
+         border: 2px solid rgb(200, 228, 240);
+         display: flex;
+         margin: auto;
+         border-radius: 19px;
+         color: rgb(35, 4, 126);
+      }
+      .btn input[type='button']{
+         width:80px;
+         padding: 2px;
+         margin: 5px 5px;
+         border-radius: 19px;
+         border-color: #b7f0f9;
+         box-shadow: 5px 5px 6px rgb(25, 53, 64);
+         position: relative;
+         left: 13px;
+         top: 20px;
+         height: 55px;
+         cursor: pointer;
+         font-size: 19px;
+         font-family:sans-serif  ;  
+         transition: 0.5s;
+         background-color: #65e1f4;
+      
+         
+         
+      }
+      .btn input[type='button']:hover{
+         background-color: rgb(20, 214, 240);
+         color: rgb(13, 109, 177);
+      }
+   </style>
+   <script>
+      function Solve(val) {
+         var v = document.getElementById('res');
+         v.value += val;
+      }
+      function Result() {
+         var num1 = document.getElementById('res').value;
+         var num2 = eval(num1);
+         document.getElementById('res').value = num2;
+      }
+      function Clear() {
+         var inp = document.getElementById('res');
+         inp.value = '';
+      }
+      function Back() {
+         var ev = document.getElementById('res');
+         ev.value = ev.value.slice(0,-1);
+      }
+   </script>
+   <title>Calulator</title>
+</head>
+<body>
+   <div class="main">
+      <input type="text" id = 'res'>
+      <div class="btn">
+         <br>
+      
+         <input type="button" value = 'C' onclick = "Clear()">
+         <input type="button" value = '%' onclick = "Solve('%')">
+         <input type="button" value = 'del' onclick ="Back('←')">
+         <input type="button" value = '/' onclick = "Solve('/')">
+         <br>
+         <input type="button" value = '7' onclick = "Solve('7')">
+         <input type="button" value = '8' onclick = "Solve('8')">
+         <input type="button" value = '9' onclick = "Solve('9')">
+         <input type="button" value = 'x' onclick = "Solve('*')">
+         <br>
+         <input type="button" value = '4' onclick = "Solve('4')">
+         <input type="button" value = '5' onclick = "Solve('5')">
+         <input type="button" value = '6' onclick = "Solve('6')">
+         <input type="button" value = '-' onclick = "Solve('-')">
+         <br>
+         <input type="button" value = '1' onclick = "Solve('1')">
+         <input type="button" value = '2' onclick = "Solve('2')">
+         <input type="button" value = '3' onclick = "Solve('3')">
+         <input type="button" value = '+' onclick = "Solve('+')">
+         <br>
+         <input type="button" value = '00'onclick = "Solve('00')">
+         <input type="button" value = '0' onclick = "Solve('0')">
+         <input type="button" value = '.' onclick = "Solve('.')">
+         <input type="button" value = 'ANS' onclick = "Result()">
+      </div>
+   </div>
+   
+   <script src = 'Calc.js' ></script>
+</body>
+</html>
